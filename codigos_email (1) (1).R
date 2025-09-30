@@ -1,5 +1,15 @@
 #email1
 
+# A PRAE irá extrair uma amostra de tamanho 1500 (na qual questionaremos esse número mais para frente) e te enviou o e-mail abaixo.
+
+# Prezad@ xxxxxx,
+
+# Estamos felizes em contar com sua consultoria para aprimorarmos nosso serviço oferecido. Temos algumas dúvidas sobre como essa pesquisa será realizada:
+
+# Precisamos coletar dados de todos os seis restaurantes? Se não precisa, de quantos restaurantes serão necessários?
+
+# Dos 1500 clientes que irão compor a amostra, quantos serão de cada restaurante?
+
 tamanhos <- RU_censo2 %>%
   count(RU) %>%
   mutate(proporcao = n / sum(n),
@@ -15,6 +25,14 @@ amostra_AASc <- RU_censo2 %>%
 amostra_AASc
 
 #email2
+
+# Prezad@ xxxxxx,
+
+# Nossa equipe gostou da ideia de coletar dados de todos os 6 restaurante.
+
+# Precisamos então definir quantos clientes serão entrevistados em cada restaurante, pode nos auxiliar com essa questão?
+
+# Em tempo, lembro que pretendemos coletar uma amostra total de 1500 alunos.
 
 library(tidyverse)
 library(ggplot2)
@@ -136,6 +154,11 @@ ggplot(RU_censo2, aes(x = RU, y = nota_satisfacao)) +
   )
 
 #email3
+
+# Submetemos nosso estudo ao Comitê de Ética em Pesquisa da Universidade. O projeto voltou com algumas pendências, uma relacionada ao tamanho amostral:
+
+
+# “É necessário justificar o tamanho amostral de 1500 clientes. Forneça uma justificativa ou faça o cálculo do tamanho amostral necessário com base em algum critério”
 
 #variância populacional da nota
 S2 <- var(RU_censo2$nota_satisfacao, na.rm = TRUE)
